@@ -1,0 +1,50 @@
+<html>
+    <head>
+		<meta charset="UTF-8">
+        <title>
+            Norakstīt datortehniku
+        </title>
+        <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+        <script src='js/norakstit_tehniku.js'></script>
+        <script src='js/dzest_tehniku.js'></script>
+		<script src='js/head_food.js'></script>
+    </head>
+    <body>
+        <script>
+            head("Tehnikas norakstīšana","visas_tehnikas_db.html");
+        </script>
+            
+            <div class="flex">
+                <div class="col1">
+                    <label for="tehnika"> Datortehnikas veids:</label>
+                </div>
+                <div class="col1">
+                    <select name="tehnika" id="tehnika" onchange="nomainiLaukus()" value="dators">
+                        <option value="dators">dators</option>
+                        <option value="monitors">monitors</option>
+                        <option value="printeris">printeris</option>
+                        <option value="projektors">projektors</option>
+                        <option value="kopetajs">kopētājs</option>
+                        <option value="skandas">skandas</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr>
+            <p id="datortehnika">dators</p>
+
+            <div class="col">            
+                <button class="nosaukumi" id="bnos1">tehnikas ID</button>
+                <input class="dati" type="text" id="inos1" name="id" ><br>
+            </div>
+            <hr> 
+            <button class=button1 id=norakstit onclick="norakstit_tehniku()">Norakstīt</button>
+            <button class=button1 id=dzest onclick="dzest_tehniku()">Izdzēst</button>
+
+        <!-- -->
+        <script>
+            foot();
+        </script>
+    </body>
+    
+</html>

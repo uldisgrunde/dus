@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Skolas datortehnikas uzskaite</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel='stylesheet' href='css/style.css'>
+		<script src='js/main.js'></script>
+	</head>
+	<body>
+		<script>
+			head("","");
+		</script>
+    <!-- -->
+		<form method="post" action="admin.html" onsubmit="validateForm(this); return false;">
+			<div class="flex">
+					<div class="col">
+						<label>Lietotājs:</label>
+						<br><br>
+						<label>Parole:</label>
+						<br><br>
+					</div>
+					<div class="col">
+						<input type="text" id="user" required>
+						<br><br>
+						<input type="password" id="password" required>
+						<br><br>
+						<input class="button" type="submit" value="Pieteikties">
+						<br><br>
+					</div>
+					</form>
+					<div>
+						<a class="button" href="kabineti.html">Kabinetos pielietojamā tehnika</a>
+						<br><br>
+						<a class="button" href="pieteikt.html">Ziņot par problēmu ar tehniku</a>
+					</div>
+
+			</div>
+
+
+    <!-- -->
+    <script>
+        foot();
+    </script>
+</body>
+
+</html>

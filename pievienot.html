@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html  lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Skolas datortehnikas uzskaite- pievienot datortehniku</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel='stylesheet' href='css/style.css'>
+		<script src='js/main.js'></script>
+	</head>
+	<body>
+		<script>
+			head("Jaunas tehnikas ievade","tehnika.html");
+		</script>
+    <!-- -->
+
+        <!--Izvēlēties ievadāmo tehniku:-->
+        <div class="flex">
+            <div class="col">
+                <label for="tehnika">Datortehnikas veids:</label>
+            </div>
+            <div class="col">
+                <select name="tehnika" id="tehnika" onchange="nomainiLaukus(this.value)">
+			<!-- <select id="myCab" onchange ="meklet(2, this.id)" alt="Mekēt pēc kabineta"> -->
+				<!-- <option value="">Viss saraksts</option> -->
+			</select>
+            </div>
+        </div>
+        
+        <!-- <button class=button id=ievads onclick="nomainiLaukus()">Izvēlies</button>
+ -->        
+        <br><br>
+		<hr></hr>
+        <p id="datortehnika">dators</p>
+        <div class="flex1"> <!--saliek blakus kastes-->            
+            <div class="col">            
+                <label class="nosaukumi buttons" id="bnos1">Id</label>
+                <input class="dati" type="number" id="inos1" name="id" value="1" readonly><br>
+                <label class="nosaukumi buttons" type="button" id="bnos2">Inventāra nr</label>
+                <input class="dati" type="text" id="inos2" name="inventaraNR" ><br>
+                <label class="nosaukumi buttons" type="button" id="bnos3">Nosaukums</label>
+                <input class="dati" type="text" id="inos3" name="nosaukums" ><br>
+                <label class="nosaukumi buttons" type="button" id="bnos4">Iegādes gads</label>
+                <input class="dati" type="number" id="inos4" name="iegadesGads" value="2012" ><br>
+                <label class="nosaukumi buttons" type="button" id="bnos5">Piegādātājs</label>
+                <select class="dati" id="inos5" id="inos5" name="piegadatajs" ></select><br> 
+                <label class="nosaukumi buttons" type="button" id="bnos6">Ražotājs</label>
+                <select class="dati" id="inos6" name="razotajs"></select><br> 
+            </div>
+            <div class="col">            
+                <label class="nosaukumi buttons" type="button" id="bnos7">Kabineta nr.</label>
+                <input class="dati" type="text" id="inos7" name="kabinetaNr" ><br>
+                <label class="nosaukumi buttons" type="button" id="bnos8">Atbildīgais</label>
+                <input class="dati" type="text" id="inos8" name="atbildigais" ><br>
+				<label class="nosaukumi buttons" type="button" id="bnos9">Info1</label>
+				<input class="dati" type="text" id="inos9" name="info1" ><br>
+				<label class="nosaukumi buttons" type="button" id="bnos10">Info2</label>
+				<input class="dati" type="text" id="inos10" name="info2" ><br>
+				<label class="nosaukumi buttons" type="button" id="bnos11">Info3</label>
+				<input class="dati" type="text" id="inos11" name="Info3" ><br> 
+				<label class="nosaukumi buttons" type="button" id="bnos12">Info4</label>
+				<input class="dati" type="text" id="inos12" name="Info4"><br>
+            </div>
+        </div>
+			<hr></hr>     
+            <input type="button" id="saglabat" value="Saglabāt"> 
+    <!-- -->
+    <script>
+        foot();
+		getList("unit","tehnika", "Dators");
+		getList("unit","inos5", "");
+		getList("unit","inos6", "");
+		nomainiLaukus("Dators");
+    </script>
+</body>
+
+</html>

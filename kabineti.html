@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <title>Klasēs pieejamā datortehnika-visu kabinetu tehnika</title>
+        <link rel='stylesheet' href='css/style.css'>
+		<script src='js/main.js'></script>
+	</head>
+	<body>
+		<script>
+			head("Klasēs pieejamā tehnika","index.html");
+		</script>
+		<br>
+		<div class="flex">
+			<div class="col">
+				<label>Telpas nr.:</label>
+				<br>
+				<input type="checkbox" id="dators"onchange="klasesTehnikaf()"><label>Dators</label>
+				<br>
+				<input type="checkbox" id="projektors" onchange="klasesTehnikaf()"><label>Projektors</label>
+			</div>
+			<div class="col">
+				<input type="text" id="kabinets" >
+				<br>
+				<input type="checkbox" id="skandas" onchange="klasesTehnikaf()"><label>Skandas</label>
+				<br>
+				<input type="checkbox" id="kopetajs" onchange="klasesTehnikaf()">Kopētājs
+			</div>
+        </div>
+        <br>
+        <hr></hr>
+            <!--tabula-->
+            <table>
+                <thead>                          
+					<tr>
+						<th>Kabineta Nr.</th>
+						<th>Projektors</th>
+						<th>Datoru skaits</th>
+						<th>Skandas</th>
+						<th>Informācija</th>
+					</tr>
+                </thead>
+                <tbody id="rinda">
+                </tbody>
+            </table>
+     <!-- -->
+    <script>
+        foot();
+		klasesTehnikaf();
+		//getData("datorudb","rinda",["name","invNr","room","note","status"],'statuss("rinda")');
+    </script>
+</body>
+
+</html>         
