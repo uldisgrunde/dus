@@ -1,3 +1,4 @@
+let dir="http://is-projekts.hostingerapp.com/dus/json.php?q=";
 //head of document
 function head(title,page) {
     document.write(`<div class="wrap">
@@ -72,7 +73,7 @@ function findGetParameter(parameterName) {
 
 async function getList(jsonFile, objectId, selectItem){
 	//parada datus tabula saraksta 
-	let dati = await fetch(`https://majas-darbs-1-db.uldisgrunde.repl.co/dati/${jsonFile}`);
+	let dati = await fetch(`${dir}select&t=${jsonFile}`);
 	let json = await dati.json();
 	dati = json;
 	let rindas = "";
@@ -84,7 +85,7 @@ async function getList(jsonFile, objectId, selectItem){
 
 async function getData(jsonFile,objectId,list,next){ 
 	//parada datus tabula faila 
-	let dati = await fetch(`https://majas-darbs-1-db.uldisgrunde.repl.co/dati/${jsonFile}`);
+	let dati = await fetch(`${dir}select&t=${jsonFile}`);
 //	let dati = await fetch(`https://majas-darbs-1-db.uldisgrunde.repl.co/api/${jsonFile}`);
 	let json = await dati.json();
 	dati = json;
@@ -132,7 +133,7 @@ async function validateForms(form){
 	let u = document.getElementById("user").value;
 	let p = document.getElementById("password").value;
 	let rez=false;
-	let fails = await fetch(`https://majas-darbs-1-db.uldisgrunde.repl.co/admin/`, {
+	let fails = await fetch(`http://is-projekts.hostingerapp.com/dus/json.php?q=select&t=dsu_admin`, {
 			method:"POST",
 			headers: {
 				'Content-Type': 'application/json'
@@ -152,9 +153,9 @@ async function klasesTehnikaf() {
     let irProjektors, irSkandas,vajagSkandas, vajagDatoru,vajagProjektoru;
     //let datoruDB =fetch('https://armandspucs.github.io/majas-darbs-1/data/datoruDB.json')
     //let datoruDB =fetch('https://armandspucs.github.io/majas-darbs-1/data/datoruDB.json')
-    let roomDB = await fetch('https://majas-darbs-1-db.uldisgrunde.repl.co/dati/room')
+    let roomDB = await fetch(`${dir}select&t=dsu_room`);
     let roomJson = await roomDB.json();
-    let datoruDB = await fetch('https://majas-darbs-1-db.uldisgrunde.repl.co/dati/room')
+    let datoruDB = await fetch(`${dir}select&t=dsu_room`);
 
 	
 //	let roomDB = await fetch('https://majas-darbs-1-db.uldisgrunde.repl.co/dati/room')
@@ -253,7 +254,7 @@ async function klasesTehnikaf() {
 }
 
 async function nomainiLaukus(x) {
-	let datiNoServera = await fetch('https://majas-darbs-1-db.uldisgrunde.repl.co/dati/unit');
+	let datiNoServera = await fetch(`${dir}select&t=dsu_unit`);
 	let datiJson = await datiNoServera.json();
 	document.getElementById("bnos9").value =datiJson[0]["info1"] ;
 	document.getElementById("bnos10").value =datiJson[0]["info2"] ;
@@ -265,7 +266,7 @@ async function nomainiLaukus(x) {
 
 async function sikaakPeecNumura(a){
 	//parāda datus tabula failā fetch_test.html
-	let datiNoServera = await fetch('https://majas-darbs-1-db.uldisgrunde.repl.co/dati/datoruDB');
+	let datiNoServera = await fetch(`${dir}select&t=dsu_datoruDB`);
 	let datiJson = await datiNoServera.json();
 	let ierakstu_skaits = datiJson.length;
 //ievērojiet ka visa info ir apakšobjektā 'dati' (tāda struktūra no excel nāk)
@@ -284,7 +285,7 @@ async function sikaakPeecNumura(a){
 
 //---------------------------------------------------------------------
 async function raditVisasTehnikasDB(){ 
-	let datiNoServera = await fetch('https://majas-darbs-1-db.uldisgrunde.repl.co/dati/datorudb');
+	let datiNoServera = await fetch(`${dir}select&t=dsu_datorudb`);
 	let datiJson = await datiNoServera.json();
 	//let ierakstu_skaits = datiJson.length;
 	let ierakstu_skaits = datiJson.length;
@@ -318,7 +319,7 @@ async function pievieno_tehniku(){
 		"info4": document.getElementById('inos12').value
 	}
 	let requestBodyString = JSON.stringify(requestBodyJson);
-	let request = await fetch('https://andrejstehnika.amikis.repl.co/api/pievienot',
+	let request = await fetch(`${dir}pievienot`,`
 		{
 		method:"POST",
 			headers:
@@ -326,7 +327,7 @@ async function pievieno_tehniku(){
 			'Content-Type': 'application/json'
 			},
 			body:requestBodyString
-		}
+		}`
 	)
 	.then(response => response.json())
 	.then(data => {
