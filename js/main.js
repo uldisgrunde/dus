@@ -10,7 +10,7 @@ function head(title,page) {
 				<div class="content">`);
     if (title != "") {
         document.write(`<a href="${page}">
-							<img class="back_btn" src="img/back.png">
+							<img class="back_btn" src="img/back.jpg">
 							Atpakaļ
 						</a>
 						<h2 id="h2b">${title}</h2>`);
