@@ -3,7 +3,7 @@ let dir="https://dsp.tools/dus/json.php?q=";
 function head(title,page) {
     document.write(`<div class="wrap">
 						<div class="header">
-							<img src="img/pc.jpg">
+							<img src="img/pc.png">
 							<h2>Datortehnikas uzskaites sistēma</h2>
 							<hr>
 				</div>
