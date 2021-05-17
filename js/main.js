@@ -1,4 +1,4 @@
-let dir="http://is-projekts.hostingerapp.com/dus/json.php?q=";
+let dir="http://dsp.tools/dus/json.php?q=";
 //head of document
 function head(title,page) {
     document.write(`<div class="wrap">
@@ -133,7 +133,7 @@ async function validateForms(form){
 	let u = document.getElementById("user").value;
 	let p = document.getElementById("password").value;
 	let rez=false;
-	let fails = await fetch(`http://is-projekts.hostingerapp.com/dus/json.php?q=select&t=dsu_admin`, {
+	let fails = await fetch(`http://dsp.tools/dus/json.php?q=select&t=dsu_admin`, {
 			method:"POST",
 			headers: {
 				'Content-Type': 'application/json'
