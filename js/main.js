@@ -1,4 +1,4 @@
-let dir="http://dsp.tools/dus/json.php?q=";
+let dir="https://dsp.tools/dus/json.php?q=";
 //head of document
 function head(title,page) {
     document.write(`<div class="wrap">
