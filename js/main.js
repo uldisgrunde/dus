@@ -3,7 +3,7 @@ let dir="https://dsp.tools/dus/json.php?q=";
 function head(title,page) {
     document.write(`<div class="wrap">
 						<div class="header">
-							<img src="img/logo.png">
+							<img src="img/pc.jpg">
 							<h2>Datortehnikas uzskaites sistēma</h2>
 							<hr>
 				</div>
@@ -20,7 +20,7 @@ function head(title,page) {
 function foot() {
     document.write(`<div class="footer">
 						<hr>
-						(c) 2020 Sia "Kafijas automāts"
+						2021 - Āls Valdis Ziedonis
 					</div>
 				</div><!--beidzas wrap-->`);
 }
