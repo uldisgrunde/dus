@@ -20,7 +20,7 @@ function head(title,page) {
 function foot() {
     document.write(`<div class="footer">
 						<hr>
-						2021 - Āls Valdis Ziedonis
+						2021 - Uldis Grunde-Zeiferts
 					</div>
 				</div><!--beidzas wrap-->`);
 }
